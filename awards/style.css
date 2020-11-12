@@ -1,0 +1,16 @@
+.ourAwards {
+    font-family: 'Poppins',
+        sans-serif;
+    color: rgb(110, 53, 104);
+    font-size: 30px;
+}
+
+.awardsPicture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.awardsPicture img {
+    height: 100px;
+}

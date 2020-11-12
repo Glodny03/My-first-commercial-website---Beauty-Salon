@@ -1,0 +1,943 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caudex:wght@400;700&family=Josefin+Slab:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow-y: scroll; */
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+    background: rgb(190, 99, 156);
+    -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(110, 53, 104);
+    -webkit-border-radius: 1ex;
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
+
+::-webkit-scrollbar-corner {
+    background: black;
+}
+
+header {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    background-image: url(images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    max-width: 100%;
+    padding: 40px 40px;
+    overflow: hidden;
+
+}
+
+.navigation {
+    position: absolute;
+    top: 70px;
+    right: 60px;
+    display: block;
+}
+
+.navigation ul li {
+    display: inline;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.navigation a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: 26px;
+    color: rgb(190, 99, 156);
+    margin: 40px;
+    transition: 0.2s;
+
+}
+
+.welcome .logo {
+    position: absolute;
+    height: 120px;
+    top: 30px;
+    cursor: pointer;
+}
+
+.opacity {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 300px;
+}
+
+.navigation ul li a:hover {
+    color: rgb(110, 53, 104);
+    border-bottom: 3px solid rgb(110, 53, 104);
+}
+
+.information {
+    position: absolute;
+    left: 50vw;
+    bottom: 120px;
+    transform: translateX(-50%);
+    text-align: center;
+    cursor: default;
+}
+
+.information h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: rgb(243, 108, 194);
+    text-shadow: 1px 1px 5px black;
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+
+.information h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+
+.information h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+
+.information p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+}
+
+.downOpacity {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+}
+
+.arrow {
+    position: absolute;
+    height: 80px;
+    bottom: 15px;
+    left: 50vw;
+    transform: translateX(-50%);
+    animation: arrowMotion 2s linear infinite;
+}
+
+.burger {
+    position: fixed;
+    top: 8px;
+    color: rgb(190, 99, 156);
+    right: 8px;
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    font-family: arial;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    border: 2px solid rgb(190, 99, 156);
+    transition: .3s linear;
+    display: none;
+}
+
+.burger.active {
+    transform: rotate(405deg);
+}
+
+.burger:hover {
+    cursor: pointer;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -60vw;
+    width: 60vw;
+    text-transform: uppercase;
+    background-image: linear-gradient(-60deg, rgb(190, 99, 156), rgb(228, 154, 201));
+    transition: .3s linear;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+aside nav ul li {
+    font-family: 'Poppins',
+        sans-serif;
+    text-decoration: none;
+    font-size: 26px;
+    margin: 15px;
+    color: white;
+    transition: 0.2s;
+    text-align: center;
+    list-style: none;
+}
+
+aside nav ul li a {
+    font-family: 'Raleway',
+        sans-serif;
+    text-decoration: none;
+    font-size: 3.75vh;
+    color: white;
+    transition: 0.2s;
+    font-weight: 800;
+    text-align: center;
+    text-shadow: 1px 1px 5px black;
+}
+
+.burger.active+aside {
+    left: 0;
+}
+
+@keyframes arrowMotion {
+    0% {
+        margin-bottom: -10px;
+    }
+
+    50% {
+        margin-bottom: 10px;
+    }
+
+    100% {
+        margin-bottom: -10px;
+    }
+}
+
+
+.aboutMe {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 5vw 20px 5vw;
+    font-family: 'Caudex',
+        serif;
+    color: rgb(190, 99, 156);
+
+}
+
+.aboutMe .title h1,
+h2 {
+    font-size: 120px;
+}
+
+.aboutMe .title h2 {
+    margin-top: -50px;
+    margin-left: 50px;
+}
+
+.aboutMe .title h3 {
+    font-size: 40px;
+    margin-top: -15px;
+}
+
+.aboutMe .title p {
+    font-size: 22.5px;
+    max-width: 800px;
+    color: rgb(110, 53, 104);
+}
+
+.aboutMe img {
+    height: 27vw;
+    margin-top: 2.6vw;
+    margin-left: 30px;
+}
+
+
+/* Goodboxy */
+
+.goodbox {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 30px;
+    padding: 50px;
+    justify-content: space-between;
+    border-bottom: 10px dotted rgb(110, 54, 104);
+}
+
+.goodbox::before {
+    border-bottom: 10px dotted rgb(190, 99, 156);
+}
+
+
+
+.goodbox div {
+    padding: 10px;
+    max-width: 420px;
+    height: auto;
+    border: 3px solid rgb(110, 53, 104);
+    text-align: center;
+    margin-bottom: 5px;
+    cursor: default;
+}
+
+.goodbox div:hover {
+    border-color: rgb(190, 99, 156);
+}
+
+.goodbox div h1 {
+    font-family: 'Poppins',
+        sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: rgb(190, 99, 156);
+
+}
+
+.goodbox div p {
+    font-size: 19px;
+    color: rgb(110, 53, 104);
+    font-family: poppins;
+}
+
+.goodbox div:nth-child(4) p,
+.goodbox div:nth-child(3) p,
+.goodbox div:nth-child(2) p {
+    font-size: 22px;
+}
+
+.goodbox div img {
+    height: 120px;
+    box-sizing: content-box;
+    padding: 20px;
+}
+
+.goodbox .equipment img {
+    height: 110px;
+}
+
+.goodbox .appreciated p {}
+
+.goodbox .appreciated a:hover {
+    color: rgb(190, 99, 156);
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    overflow: hidden;
+    margin-bottom: 120px;
+}
+
+#container {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+.contact h1 {
+    font-family: 'Poppins',
+        serif;
+    color: rgb(190, 99, 156);
+    font-size: 6vw;
+    font-weight: 400;
+}
+
+.content {
+    margin-right: 70px;
+}
+
+.contact .map {
+    border: 7px dashed rgb(190, 99, 156);
+}
+
+
+.contact h2,
+.contact h3,
+.contact p {
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(110, 53, 104);
+    font-size: 30px;
+}
+
+footer {
+    position: relative;
+    height: 200px;
+    background-color: rgb(110, 53, 104);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    color: white;
+    text-align: center;
+    font-family: 'Raleway',
+        sans-serif;
+    font-size: 13.5px;
+    letter-spacing: 0.6px;
+}
+
+.info {
+    margin-top: 110px;
+}
+
+.dottLogo {
+    position: absolute;
+    top: -12px;
+    height: 100px;
+}
+
+
+
+.sci {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin-top: 6px;
+}
+
+.sci li {
+    list-style-type: none;
+}
+
+.sci li a {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    margin: 10px 0 0;
+}
+
+
+.sci li a img {
+    max-width: 27px;
+}
+
+.info p:nth-child(1) {
+    margin-bottom: 5px;
+}
+
+.button {
+    position: fixed;
+    color: green;
+}
+
+
+
+@media (max-width: 470px) {
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        overflow: hidden;
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .content h1 {
+        font-family: 'Poppins',
+            serif;
+        color: rgb(190, 99, 156);
+        font-size: 16vw;
+        font-weight: 400;
+
+    }
+
+    .content {
+        margin-right: 0px;
+    }
+
+    .contact .map {
+        margin-top: 20px;
+        border: 7px dashed rgb(190, 99, 156);
+    }
+
+
+    .contact iframe {
+        width: 90vw;
+        height: 50vh;
+    }
+
+
+    .contact h2,
+    .contact h3,
+    .contact p {
+        font-weight: 400;
+        font-family: 'Raleway', sans-serif;
+        color: rgb(110, 53, 104);
+        font-size: 7vw;
+    }
+
+
+    .welcome .logo {
+        height: 15%;
+        top: 3%;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    .information {
+        left: 50vw;
+        bottom: 14vh;
+        transform: translateX(-50%);
+        text-align: center;
+        cursor: default;
+    }
+
+    .information h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        color: rgb(243, 108, 194);
+        text-shadow: 1px 1px 5px black;
+        font-size: 12vw;
+        margin-bottom: 1vh;
+    }
+
+    .information h2 {
+        font-size: 9vw;
+    }
+
+    .information h3 {
+        font-size: 7.5vw;
+    }
+
+    .information p {
+        font-size: 6.5vw;
+    }
+
+    .arrow {
+
+        height: 10vh;
+        bottom: 15px;
+        left: 50vw;
+        transform: translateX(-50%);
+        animation: arrowMotion 2s linear infinite;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .mebox {
+        float: right;
+    }
+
+    /* O MNIE */
+    .aboutMe {
+        flex-direction: column;
+        padding: 8px 5px 2px 5px;
+        text-align: center;
+    }
+
+    .aboutMe .title h1,
+    h2 {
+        font-size: 16vw;
+    }
+
+    .aboutMe .title h2 {
+        margin-top: -20px;
+        margin-left: 0px;
+    }
+
+    .aboutMe .title h3 {
+        font-size: 7.5vw;
+        margin-top: -6px;
+    }
+
+    .aboutMe .title p {
+        font-size: 5.5vw;
+    }
+
+    .aboutMe img {
+        height: 80vw;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+
+    /* GOODBOX */
+
+    .goodbox {
+
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        margin: 0 20px;
+        padding: 20px 0;
+        justify-content: space-between;
+    }
+
+    .goodbox div {
+        padding: 10px;
+        max-width: 420px;
+        height: auto;
+        border: 3px solid rgb(110, 53, 104);
+        text-align: center;
+        margin: 4vw 0;
+    }
+
+    .goodbox div h1 {
+        font-family: 'Poppins',
+            sans-serif;
+        font-weight: 400;
+        font-size: 8vw;
+        color: rgb(190, 99, 156);
+
+    }
+
+    .goodbox div p {
+        font-size: 4.5vw;
+        color: rgb(110, 53, 104);
+        font-family: poppins;
+    }
+
+    .goodbox div:nth-child(4) p,
+    .goodbox div:nth-child(3) p,
+    .goodbox div:nth-child(2) p {
+        font-size: 6vw;
+    }
+
+    .goodbox div img {
+        height: 30vw;
+        box-sizing: content-box;
+        padding: 1vw;
+    }
+
+    .goodbox .equipment img {
+        height: 28vw;
+        padding: 1vw;
+    }
+
+    .goodbox .appreciated p {
+        margin-bottom: 15px;
+    }
+
+    .goodbox .appreciated a {
+        padding: 0.8vw;
+    }
+}
+
+@media (max-width: 850px) and (orientation: landscape) {
+    .welcome .logo {
+        height: 25vh;
+        top: 3%;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    .information {
+        left: 50vw;
+        bottom: 14vh;
+        transform: translateX(-50%);
+        text-align: center;
+        cursor: default;
+    }
+
+    .information h1 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+        color: rgb(243, 108, 194);
+        text-shadow: 1px 1px 5px black;
+        font-size: 10vh;
+        margin-bottom: 1vh;
+        width: 100vw;
+    }
+
+    .information h2 {
+        font-size: 9vh;
+    }
+
+    .information h3 {
+        font-size: 7.5vh;
+    }
+
+    .information p {
+        font-size: 6.5vh;
+    }
+
+    .arrow {
+
+        height: 10vh;
+        bottom: 15px;
+        left: 50vw;
+        transform: translateX(-50%);
+        animation: arrowMotionMini 2s linear infinite;
+    }
+
+    .opacity {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 60vh;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    /* O MNIE */
+    .aboutMe {
+        flex-direction: column;
+        padding: 8px 5px 2px 5px;
+        text-align: center;
+    }
+
+    .aboutMe .title h1,
+    h2 {
+        font-size: 8vw;
+    }
+
+    .aboutMe .title h2 {
+        margin-top: -20px;
+        margin-left: 0px;
+    }
+
+    .aboutMe .title h3 {
+        font-size: 4vw;
+        margin-top: -6px;
+    }
+
+    .aboutMe .title p {
+        font-size: 3vw;
+    }
+
+    .aboutMe img {
+        height: 50vw;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+
+    /* GOODBOX */
+    .goodbox {
+        margin: 0 20px;
+        padding: 20px 0;
+    }
+
+    .goodbox div {
+        padding: 5px;
+        width: 46vw;
+        text-align: center;
+        margin: 2vw 0;
+    }
+
+    .goodbox div h1 {
+        font-size: 4vw;
+    }
+
+    .goodbox div p {
+        font-size: 2.7vw;
+    }
+
+    .goodbox div:nth-child(4) p,
+    .goodbox div:nth-child(3) p,
+    .goodbox div:nth-child(2) p {
+        font-size: 3vw;
+    }
+
+    .goodbox .equipment {
+        font-size: 2.4vw;
+    }
+
+    .goodbox .equipment img {
+        height: 19vw;
+        padding: 1vw;
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-family: 'Poppins',
+            serif;
+        color: rgb(190, 99, 156);
+        font-size: 9vw;
+        font-weight: 400;
+
+    }
+
+    .content {
+        margin-right: 0px;
+    }
+
+    .contact .map {
+        margin-top: 20px;
+        border: 7px dashed rgb(190, 99, 156);
+    }
+
+    .contact iframe {
+        width: 70vw;
+        height: 60vh;
+    }
+
+
+    .contact h2,
+    .contact h3,
+    .contact p {
+        font-weight: 400;
+        font-family: 'Raleway', sans-serif;
+        color: rgb(110, 53, 104);
+        font-size: 6vw;
+    }
+
+}
+
+@keyframes arrowMotionMini {
+    0% {
+        margin-bottom: -5px;
+    }
+
+    50% {
+        margin-bottom: 5px;
+    }
+
+    100% {
+        margin-bottom: -5px;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1850px) {
+    .goodbox div {
+        padding: 10px;
+        margin-bottom: 15px;
+        max-width: 10000px;
+        height: auto;
+        border: 3px solid rgb(110, 53, 104);
+        text-align: center;
+    }
+
+    .goodbox {
+        margin: 0 100px;
+    }
+}
+
+@media (min-width: 471px) and (max-width: 1300px) {
+    .welcome .logo {
+        top: 3%;
+        left: 50vw;
+        transform: translateX(-50%);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .goodbox div {
+        padding: 5px;
+        margin-bottom: 15px;
+        max-width: 10000px;
+
+        height: auto;
+        border: 3px solid rgb(110, 53, 104);
+        text-align: center;
+    }
+
+    .aboutMe {
+        flex-direction: column;
+        padding: 8px 5px 2px 5px;
+        text-align: center;
+    }
+
+    .aboutMe .title h1,
+    h2 {
+        font-size: 8vw;
+    }
+
+    .aboutMe .title h2 {
+        margin-top: -20px;
+        margin-left: 0px;
+    }
+
+    .aboutMe .title h3 {
+        font-size: 4vw;
+        margin-top: -6px;
+    }
+
+    .aboutMe .title p {
+        font-size: 3vw;
+    }
+
+    .aboutMe img {
+        height: 50vw;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0px;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-family: 'Poppins',
+            serif;
+        color: rgb(190, 99, 156);
+        font-size: 11vw;
+        font-weight: 400;
+
+    }
+
+    .content {
+        margin-right: 0px;
+    }
+
+    .contact .map {
+        margin-top: 20px;
+        border: 7px dashed rgb(190, 99, 156);
+    }
+
+    .contact iframe {
+        width: 60vw;
+        height: 60vw;
+    }
+
+
+    .contact h2,
+    .contact h3,
+    .contact p {
+        font-weight: 400;
+        font-family: 'Raleway', sans-serif;
+        color: rgb(110, 53, 104);
+        font-size: 4vw;
+    }
+
+}
